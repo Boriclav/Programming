@@ -5,7 +5,6 @@ A = []
 n = int(input())
 for i in range(n):
     A.append(int(input()))
-print(A)
 for i in range(n):
 	if A[i]%2 == 0:
 		A[i] = A[i]/2
