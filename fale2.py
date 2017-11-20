@@ -9,7 +9,8 @@ d = 3
 s = 0 
 m = 0
 u = 0
-A = [line.strip() for line in F]
+for line in F
+ A = line.strip()
 for i in range(len(A)):
   A[i] = A[i].split()
   k = A[i]
