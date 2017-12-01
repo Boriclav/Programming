@@ -15,15 +15,15 @@ def pime(n):
 				break
 	if (a != 1) and (n != 1):
 		print(n, 'is prime')
-f = open("2.txt")
+f = open("2-in.txt")
 F = f.readlines()
 for line in F:
 	A.append(line)
 A = ' '.join(A)
+A = A.strip().split()
 for i in range(len(A)):
 	x = A[i].isdigit()
 	if x != False:
 		B.append(int(A[i])) 
+print(B)
 for i in range(len(B)):
-	 a = pime (B[i])
-	
