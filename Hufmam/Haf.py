@@ -2,7 +2,7 @@ from collections import Counter
 file = open ('text-in.txt', 'r') # We open the file with text
 Dic = {} # We create a Dictionary for storing letters and their numbers
 Nod = {}
-С = {}
+D = {}
 def N(x): # This function creats new nodes between lettes 
 	global Nod
 	n = {}
@@ -29,13 +29,13 @@ def N(x): # This function creats new nodes between lettes
 		N(x)    # recursion
 
 def K(x):
-	global K
+	global D
 	k = []
 	for key in x.keys():
-		k.append(key)  
-    if k[0] in Nod:  # if there is this node 
-        k2 = []
-        for key in a[k[0]].keys():
+		k.append(key)
+	if k[0] in Nod:  # if there is this node 
+		k2 = []
+		for key in Nod[k[0]].keys():
 			k2.append(key)  # Find number in node
 		if len(k2[0]) >= len(k2[1]):  # Compare the links
 			K({k2[0]: (x[k[0]] + '0')})
@@ -44,7 +44,7 @@ def K(x):
 			K({k2[1]: (x[k[0]] + '0')})
 			K({k2[0]: (x[k[0]] + '1')})
 	else:  # This is link
-		С.update(x)
+		D.update(x)
 	
 		
 
@@ -57,7 +57,7 @@ for line in file:
 N(Dic)
 nk = ""
 Key = []
-for key in Nod.keys(): # Find the biggest Node
+for key in Nod.keys(): # Find the biggest Nod
 	if len(key) > len(nk):
 		nk = key
 for key in Nod[nk].keys(): #Download new Nod
@@ -72,8 +72,7 @@ mf = open('text-in.txt')
 of = open('text-out.txt', 'w')  # Create new file for writting
 for line in mf:
 	for i in line:
-		for key in C.keys():
+		for key in D.keys():
 			if i == key:
-				of.write(str(C[key])) # Download sumbol's code in file
+				of.write(str(D[key])) # Download sumbol's code in file
 				break
-of = open('text-out.txt', 'N') 
